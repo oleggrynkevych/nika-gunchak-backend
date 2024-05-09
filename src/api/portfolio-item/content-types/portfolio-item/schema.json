@@ -52,6 +52,10 @@
       "unique": true,
       "max": "50",
       "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Title"
     }
   }
 }

@@ -14,5 +14,17 @@ module.exports = ({ env }) => ({
         },
       },
     },
-    // ...
+    
+
+    'slugify': {
+      enabled: true,
+      config: {
+        contentTypes: {
+          portfolioItem: {
+                field: 'slug',
+                references: 'Title',
+          },
+        },
+      },
+    },
   });
