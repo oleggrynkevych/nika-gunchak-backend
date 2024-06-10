@@ -860,6 +860,36 @@ export interface ApiContactContact extends Schema.SingleType {
   };
 }
 
+export interface ApiMainGalleryMainGallery extends Schema.SingleType {
+  collectionName: 'main_galleries';
+  info: {
+    singularName: 'main-gallery';
+    pluralName: 'main-galleries';
+    displayName: 'MainGallery';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Gallery: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::main-gallery.main-gallery',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::main-gallery.main-gallery',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPortfolioItemPortfolioItem extends Schema.CollectionType {
   collectionName: 'portfolio_items';
   info: {
@@ -1004,6 +1034,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::contact.contact': ApiContactContact;
+      'api::main-gallery.main-gallery': ApiMainGalleryMainGallery;
       'api::portfolio-item.portfolio-item': ApiPortfolioItemPortfolioItem;
       'api::portfolio-type.portfolio-type': ApiPortfolioTypePortfolioType;
       'api::slider-image.slider-image': ApiSliderImageSliderImage;

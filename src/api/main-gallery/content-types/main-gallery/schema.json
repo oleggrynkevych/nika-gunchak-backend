@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "main_galleries",
+  "info": {
+    "singularName": "main-gallery",
+    "pluralName": "main-galleries",
+    "displayName": "MainGallery"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Gallery": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
